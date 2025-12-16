@@ -1,0 +1,171 @@
+version: "4.1"
+name: 工程模板
+type: ARM
+deviceName: null
+packDir: null
+srcDirs: []
+virtualFolder:
+  name: <virtual_root>
+  files: []
+  folders:
+    - name: User
+      files:
+        - path: user/main.c
+        - path: user/stm32f10x_it.c
+      folders: []
+    - name: Cmsis
+      files:
+        - path: Libraries/CMSIS/CM3/CoreSupport/core_cm3.c
+        - path: Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x/system_stm32f10x.c
+      folders: []
+    - name: Startup
+      files:
+        - path: startup/startup_stm32f10x_hd.s
+      folders: []
+    - name: ST_Driver
+      files:
+        - path: Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_gpio.c
+        - path: Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_rcc.c
+        - path: Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_exti.c
+        - path: Libraries/STM32F10x_StdPeriph_Driver/src/misc.c
+        - path: Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_tim.c
+        - path: Libraries/STM32F10x_StdPeriph_Driver/src/stm32f10x_usart.c
+      folders: []
+    - name: APP
+      files:
+        - path: APP/LED.C
+        - path: APP/systick.c
+        - path: APP/USART.C
+      folders: []
+dependenceList: []
+outDir: build
+miscInfo:
+  uid: f6972846e074aeba843bac8d7332eb6b
+targets:
+  Target 1:
+    cppPreprocessAttrs:
+      defineList:
+        - USE_STDPERIPH_DRIVER
+        - STM32F10X_HD
+      incList:
+        - user
+        - Libraries/CMSIS/CM3/CoreSupport
+        - Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x
+        - Libraries/STM32F10x_StdPeriph_Driver/inc
+        - APP
+      libList: []
+    excludeList: []
+    toolchain: AC5
+    toolchainConfigMap:
+      AC5:
+        archExtensions: ""
+        cpuType: Cortex-M3
+        floatingPointHardware: none
+        options:
+          version: 4
+          afterBuildTasks: []
+          asm-compiler: {}
+          beforeBuildTasks: []
+          c/cpp-compiler:
+            CXX_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            C_FLAGS: --diag_suppress=1 --diag_suppress=1295
+            c99-mode: true
+            one-elf-section-per-function: true
+            optimization: level-0
+            warnings: unspecified
+          global:
+            output-debug-info: enable
+            use-microLIB: true
+          linker:
+            $outputTaskExcludes:
+              - .bin
+            output-format: elf
+            ro-base: "0x08000000"
+            rw-base: "0x20000000"
+            xo-base: ""
+        scatterFilePath: ""
+        storageLayout:
+          RAM:
+            - id: 1
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 3
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: RAM
+            - id: 1
+              isChecked: true
+              mem:
+                size: "0x10000"
+                startAddr: "0x20000000"
+              noInit: false
+              tag: IRAM
+            - id: 2
+              isChecked: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              noInit: false
+              tag: IRAM
+          ROM:
+            - id: 1
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 3
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: ROM
+            - id: 1
+              isChecked: true
+              isStartup: true
+              mem:
+                size: "0x80000"
+                startAddr: "0x8000000"
+              tag: IROM
+            - id: 2
+              isChecked: false
+              isStartup: false
+              mem:
+                size: "0x0"
+                startAddr: "0x0"
+              tag: IROM
+        useCustomScatterFile: false
+    uploadConfigMap:
+      JLink:
+        baseAddr: ""
+        bin: ""
+        cpuInfo:
+          cpuName: "null"
+          vendor: "null"
+        otherCmds: ""
+        proType: 1
+        speed: 8000
+    uploader: JLink

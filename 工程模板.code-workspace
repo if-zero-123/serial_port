@@ -6,10 +6,7 @@
     ],
     "settings": {
         "files.associations": {
-            "LED.C": "cpp",
-            "USART.C": "cpp",
-            "public.h": "c",
-            "string.h": "c"
+            "USART.C": "cpp"
         }
     },
     "extensions": {}

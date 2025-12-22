@@ -76,7 +76,7 @@ int fputc(int ch, FILE *f)
     return ch;
 }
 
-// 非阻塞获取接收数据
+
 int USART1_GetChar(char *c)
 {
     if (rx_head == rx_tail)

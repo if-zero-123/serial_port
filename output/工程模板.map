@@ -400,13 +400,13 @@ Image Symbol Table
     .text                                    0x08000a74   Section        0  misc.o(.text)
     .text                                    0x08000b50   Section        0  stm32f10x_usart.o(.text)
     .text                                    0x08000f58   Section        0  usart.o(.text)
-    .text                                    0x080010d4   Section       36  init.o(.text)
-    i.__0printf$2                            0x080010f8   Section        0  printf2.o(i.__0printf$2)
-    i.__scatterload_copy                     0x08001118   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08001126   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08001128   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._printf_core                           0x08001136   Section        0  printf2.o(i._printf_core)
-    _printf_core                             0x08001137   Thumb Code   214  printf2.o(i._printf_core)
+    .text                                    0x080010c8   Section       36  init.o(.text)
+    i.__0printf$2                            0x080010ec   Section        0  printf2.o(i.__0printf$2)
+    i.__scatterload_copy                     0x0800110c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x0800111a   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0800111c   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._printf_core                           0x0800112a   Section        0  printf2.o(i._printf_core)
+    _printf_core                             0x0800112b   Thumb Code   214  printf2.o(i._printf_core)
     .data                                    0x20000000   Section       20  system_stm32f10x.o(.data)
     .data                                    0x20000014   Section       20  stm32f10x_rcc.o(.data)
     APBAHBPrescTable                         0x20000014   Data          16  stm32f10x_rcc.o(.data)
@@ -644,19 +644,19 @@ Image Symbol Table
     USART1_Init                              0x08000f59   Thumb Code   150  usart.o(.text)
     USART1_SendChar                          0x08000fef   Thumb Code    28  usart.o(.text)
     USART1_SendString                        0x0800100b   Thumb Code    22  usart.o(.text)
-    fputc                                    0x08001021   Thumb Code    26  usart.o(.text)
-    USART1_GetChar                           0x0800103b   Thumb Code    54  usart.o(.text)
-    USART1_IRQHandler                        0x08001071   Thumb Code    74  usart.o(.text)
-    __scatterload                            0x080010d5   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x080010d5   Thumb Code     0  init.o(.text)
-    __0printf$2                              0x080010f9   Thumb Code    22  printf2.o(i.__0printf$2)
-    __1printf$2                              0x080010f9   Thumb Code     0  printf2.o(i.__0printf$2)
-    __2printf                                0x080010f9   Thumb Code     0  printf2.o(i.__0printf$2)
-    __scatterload_copy                       0x08001119   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08001127   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08001129   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    Region$$Table$$Base                      0x0800120c   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x0800122c   Number         0  anon$$obj.o(Region$$Table)
+    fputc                                    0x08001021   Thumb Code    16  usart.o(.text)
+    USART1_GetChar                           0x08001031   Thumb Code    54  usart.o(.text)
+    USART1_IRQHandler                        0x08001067   Thumb Code    74  usart.o(.text)
+    __scatterload                            0x080010c9   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x080010c9   Thumb Code     0  init.o(.text)
+    __0printf$2                              0x080010ed   Thumb Code    22  printf2.o(i.__0printf$2)
+    __1printf$2                              0x080010ed   Thumb Code     0  printf2.o(i.__0printf$2)
+    __2printf                                0x080010ed   Thumb Code     0  printf2.o(i.__0printf$2)
+    __scatterload_copy                       0x0800110d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x0800111b   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0800111d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x08001200   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08001220   Number         0  anon$$obj.o(Region$$Table)
     SystemCoreClock                          0x20000000   Data           4  system_stm32f10x.o(.data)
     AHBPrescTable                            0x20000004   Data          16  system_stm32f10x.o(.data)
     __stdout                                 0x2000002c   Data           4  stdout.o(.data)
@@ -670,9 +670,9 @@ Memory Map of the image
 
   Image Entry point : 0x08000131
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000125c, Max: 0x00080000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00001250, Max: 0x00080000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x0000122c, Max: 0x00080000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00001220, Max: 0x00080000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -696,24 +696,24 @@ Memory Map of the image
     0x080006d0   0x080006d0   0x000003a4   Code   RO          203    .text               stm32f10x_rcc.o
     0x08000a74   0x08000a74   0x000000dc   Code   RO          229    .text               misc.o
     0x08000b50   0x08000b50   0x00000408   Code   RO          253    .text               stm32f10x_usart.o
-    0x08000f58   0x08000f58   0x0000017c   Code   RO          295    .text               usart.o
-    0x080010d4   0x080010d4   0x00000024   Code   RO          609    .text               mc_w.l(init.o)
-    0x080010f8   0x080010f8   0x00000020   Code   RO          383    i.__0printf$2       mc_w.l(printf2.o)
-    0x08001118   0x08001118   0x0000000e   Code   RO          621    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08001126   0x08001126   0x00000002   Code   RO          622    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08001128   0x08001128   0x0000000e   Code   RO          623    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08001136   0x08001136   0x000000d6   Code   RO          390    i._printf_core      mc_w.l(printf2.o)
-    0x0800120c   0x0800120c   0x00000020   Data   RO          619    Region$$Table       anon$$obj.o
+    0x08000f58   0x08000f58   0x00000170   Code   RO          295    .text               usart.o
+    0x080010c8   0x080010c8   0x00000024   Code   RO          609    .text               mc_w.l(init.o)
+    0x080010ec   0x080010ec   0x00000020   Code   RO          383    i.__0printf$2       mc_w.l(printf2.o)
+    0x0800110c   0x0800110c   0x0000000e   Code   RO          621    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x0800111a   0x0800111a   0x00000002   Code   RO          622    i.__scatterload_null  mc_w.l(handlers.o)
+    0x0800111c   0x0800111c   0x0000000e   Code   RO          623    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x0800112a   0x0800112a   0x000000d6   Code   RO          390    i._printf_core      mc_w.l(printf2.o)
+    0x08001200   0x08001200   0x00000020   Data   RO          619    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800122c, Size: 0x000004b0, Max: 0x00010000, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08001220, Size: 0x000004b0, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x0800122c   0x00000014   Data   RW          148    .data               system_stm32f10x.o
-    0x20000014   0x08001240   0x00000014   Data   RW          204    .data               stm32f10x_rcc.o
-    0x20000028   0x08001254   0x00000004   Data   RW          297    .data               usart.o
-    0x2000002c   0x08001258   0x00000004   Data   RW          593    .data               mc_w.l(stdout.o)
+    0x20000000   0x08001220   0x00000014   Data   RW          148    .data               system_stm32f10x.o
+    0x20000014   0x08001234   0x00000014   Data   RW          204    .data               stm32f10x_rcc.o
+    0x20000028   0x08001248   0x00000004   Data   RW          297    .data               usart.o
+    0x2000002c   0x0800124c   0x00000004   Data   RW          593    .data               mc_w.l(stdout.o)
     0x20000030        -       0x00000080   Zero   RW          296    .bss                usart.o
     0x200000b0        -       0x00000400   Zero   RW          184    STACK               startup_stm32f10x_hd.o
 
@@ -734,10 +734,10 @@ Image component sizes
        932         36          0         20          0       9112   stm32f10x_rcc.o
       1032         22          0          0          0       8612   stm32f10x_usart.o
        480         38          0         20          0       2111   system_stm32f10x.o
-       380         26          0          4        128       2543   usart.o
+       368         24          0          4        128       2495   usart.o
 
     ----------------------------------------------------------------------
-      3980        190        336         44       1152     266981   Object Totals
+      3968        188        336         44       1152     266933   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          2          0          0          0          0          0   (incl. Padding)
 
@@ -779,15 +779,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      4316        216        336         48       1152     266701   Grand Totals
-      4316        216        336         48       1152     266701   ELF Image Totals
-      4316        216        336         48          0          0   ROM Totals
+      4304        214        336         48       1152     266653   Grand Totals
+      4304        214        336         48       1152     266653   ELF Image Totals
+      4304        214        336         48          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 4652 (   4.54kB)
+    Total RO  Size (Code + RO Data)                 4640 (   4.53kB)
     Total RW  Size (RW Data + ZI Data)              1200 (   1.17kB)
-    Total ROM Size (Code + RO Data + RW Data)       4700 (   4.59kB)
+    Total ROM Size (Code + RO Data + RW Data)       4688 (   4.58kB)
 
 ==============================================================================
 

@@ -37,6 +37,9 @@ virtualFolder:
         - path: APP/systick.c
         - path: APP/USART.C
       folders: []
+    - name: ::CMSIS
+      files: []
+      folders: []
 dependenceList: []
 outDir: build
 miscInfo:
@@ -53,6 +56,8 @@ targets:
         - Libraries/CMSIS/CM3/DeviceSupport/ST/STM32F10x
         - Libraries/STM32F10x_StdPeriph_Driver/inc
         - APP
+        - .cmsis/include
+        - RTE/_Target 1
       libList: []
     excludeList: []
     toolchain: AC5

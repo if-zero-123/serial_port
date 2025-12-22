@@ -29,7 +29,7 @@
    ![Keil debug.ini 配置示意](docs/img/debug-ini.png)
 
 5. **打开虚拟串口软件并创建虚拟串口**  
-   - 打开你使用的虚拟串口工具（如 VSPD、com0com 等）  
+   - 打开你使用的虚拟串口工具（如 VSPD）  
    - 新建一对互联的虚拟串口（如 COM1–COM2），记住其中一个供串口调试助手使用
    ![虚拟串口助手 虚拟串口](docs/img/1.png)
 
@@ -38,12 +38,17 @@
    - 选择前一步创建的虚拟串口号（如 COM2）
    - 波特率与工程配置一致（例如 115200）
    - 数据位、停止位、校验位与工程中 `USART` 初始化配置保持一致
+   ![串口助手 串口](docs/img/3.png)
 
 7. **进入 Keil 调试并运行**  
    - 在 Keil 中点击 **Start/Stop Debug Session** 进入调试模式  
    - 点击 **Run**（或按 F5）运行程序  
    - 打开串口数据窗口
    ![仿真界面 窗口界面](docs/img/2.png)
+
+## 效果演示
+
+![效果演示](docs/img/66.gif)
 
 ## 注意事项
 
@@ -84,3 +89,12 @@ ASSIGN COM1 <S1IN> S1OUT
 - `fputc`：重定向 C 库 `printf`，把所有 `printf` 输出的字符通过 `USART1_SendChar` 发到串口上。
 - `USART1_GetChar`：从接收环形缓冲区中取出 1 个字节（非阻塞），若没有数据则返回 0。
 - `USART1_IRQHandler`：串口1接收中断服务函数，把收到的每个字节放入环形缓冲区，并使用 `printf("%c", c)` 在串口上回显收到的数据。
+
+## 扩展项目
+
+本工程主要用于演示 **Keil 仿真 + 虚拟串口 + printf 重定向** 的基本用法。
+在此基础上，我还在其它仓库中扩展了：
+
+- **[Letter shell 项目](https://gitcode.com/open-source-toolkit/6e2e5?utm_source=highlight_word_gitcode&word=%E8%99%9A%E6%8B%9F%E4%B8%B2%E5%8F%A3&isLogin=1&from_link=938a362f8a541fc9a5fff6943f4cb947)**：基于本工程封装好的 `printf`和 `USART1_GetChar`串口接口移植 Letter shell，
+   实现串口命令行交互、变量查看与任务调度功能，实现伪终端。
+- **[LCD 优化驱动库](https://gitcode.com/open-source-toolkit/6e2e5?utm_source=highlight_word_gitcode&word=%E8%99%9A%E6%8B%9F%E4%B8%B2%E5%8F%A3&isLogin=1&from_link=938a362f8a541fc9a5fff6943f4cb947)**：结合优化后的 LCD 显示驱动进行简单的显示和结合上位机实现播放简单动画。

@@ -98,8 +98,7 @@ ASSIGN COM1 <S1IN> S1OUT
 ## 扩展项目
 
 本工程主要用于演示 **Keil 仿真 + 虚拟串口 + printf 重定向** 的基本用法。
-在此基础上，我还在其它仓库中扩展了：
-
+### 其他相关项目：
 - **[Letter shell 项目](https://github.com/if-zero-123/Letter_sim)**：基于本工程封装好的 `printf`和 `USART1_GetChar`串口接口移植 Letter shell，
    实现串口命令行交互、变量查看与任务调度功能，实现伪终端。
 - **[LCD 优化驱动库](https://github.com/if-zero-123/LCD_driver)**：结合优化后的 LCD 显示驱动进行简单的显示和结合上位机实现播放简单动画。

@@ -93,6 +93,7 @@ ASSIGN COM1 <S1IN> S1OUT
 - `fputc`：重定向 C 库 `printf`，把所有 `printf` 输出的字符通过 `USART1_SendChar` 发到串口上。
 - `USART1_GetChar`：从接收环形缓冲区中取出 1 个字节（非阻塞），若没有数据则返回 0。
 - `USART1_IRQHandler`：串口1接收中断服务函数，把收到的每个字节放入环形缓冲区，并使用 `printf("%c", c)` 在串口上回显收到的数据。
+- 提示：个人认为使用虚拟串口调式并不稳定，只能进行简单工程的调试
 
 ## 扩展项目
 
